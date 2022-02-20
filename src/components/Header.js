@@ -10,7 +10,7 @@ const Header = ({ title }) => {
     <header className="header">
       {/* <h1 style={headingStyle}>{title}</h1> */}
       <h1>{title}</h1>
-      <Button text="Add" onClick={onClick} />
+      <Button text="Add" onClick={onClick} color="green" />
       {/* we can reuse components by changing props */}
       {/* <Button color="blue" text="Hello1" />
       <Button color="red" text="Hello2" /> */}
