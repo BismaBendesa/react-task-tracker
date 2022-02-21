@@ -71,6 +71,23 @@ body {
   justify-content: space-between;
 }
 
+.message {
+  text-align: center;
+  padding-top: 3.5rem;
+  width: 100%;
+  margin: auto;
+  color: #676767;
+}
+.message svg{
+  display: block;
+  margin: auto;
+}
+
+.message small{
+  padding-top: 0.8rem;
+  display: inline-block;
+}
+
 .add-form {
   margin-bottom: 40px;
 }
