@@ -3,8 +3,11 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import { useState } from "react";
 import Message from "./components/Message";
+import Addtask from "./components/Addtask";
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false);
+
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -40,9 +43,31 @@ function App() {
     );
   };
 
+  // Add Task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 1000) + 1;
+    console.log(task);
+    // set the new task
+    const newTask = { id, ...task };
+
+    // set tasks to the previous tasks ...tasks and concate the new one newTask
+    setTasks([...tasks, newTask]);
+  };
+
+  // // toggle add btn
+  // const toggleAddBtn = () => {
+  //   // setShowAddTask(!showAddTask);
+  //   console.log("log");
+  // };
+
   return (
     <div className="container">
-      <Header />
+      <Header
+        addBtnHandler={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
+      {/* && is shorthand of terrnary operator without else */}
+      {showAddTask && <Addtask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks
           tasks={tasks}
